@@ -85,7 +85,7 @@ export const NavContainer = styled.nav.attrs(
   display: flex;
   visibility: hidden;
   position: fixed;
-  z-index: 900;
+  z-index: -1;
   top: 0;
   left: 0;
   flex-direction: row;
@@ -97,6 +97,7 @@ export const NavContainer = styled.nav.attrs(
     props.isOpen &&
     css`
       visibility: visible;
+      z-index: 900;
       opacity: 1;
     `};
 `;
