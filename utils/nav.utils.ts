@@ -30,17 +30,6 @@ export default class Nav {
     }
   }
 
-  // setMouseOver() {
-  //   const _navMenuLabels = document.querySelectorAll('.nav-menu-label');
-
-  //   // @ts-ignore
-  //   for (let e of _navMenuLabels) {
-  //     e.addEnventListener('onmouseover', () => {
-
-  //     })
-  //   }
-  // }
-
   showTarget(target: number) {
     const { document } = this;
 
