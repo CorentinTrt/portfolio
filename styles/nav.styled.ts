@@ -124,19 +124,6 @@ export const NavContent = styled.div.attrs(
     `}
 `;
 
-export const NavContentContainer = styled.div`
-  position: relative;
-  width: 50%;
-  overflow: hidden;
-
-  &:before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-  }
-`;
-
-// showcase menu
 export const NavContentGroup = styled.ul`
   position: absolute;
   top: 0;
@@ -168,7 +155,6 @@ export const NavContentItem = styled.li`
   letter-spacing: 10px;
 `;
 
-// menu
 export const NavMenu = styled.div.attrs((props: { isOpen: Boolean }) => props)`
   flex: 1;
   background: ${props => props.theme.white};
