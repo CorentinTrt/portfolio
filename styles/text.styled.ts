@@ -1,6 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+`;
 
 export const MainHeading = styled.h1`
+  display: block;
+  overflow: hidden;
+  height: 25%;
   margin: auto;
   color: ${props => props.theme.white};
   font-family: 'Montserrat', serif;
@@ -9,12 +21,18 @@ export const MainHeading = styled.h1`
   letter-spacing: 30px;
   line-height: 120px;
   text-align: center;
+  text-transform: uppercase;
 
   @media (min-width: 1024px) {
     font-size: 3rem;
   }
   @media (min-width: 1440px) {
     font-size: 4rem;
+  }
+
+  > span {
+    display: block;
+    animation: ${fadeIn} 0.7s;
   }
 `;
 
