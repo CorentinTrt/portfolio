@@ -105,8 +105,15 @@ const Home: NextPage = () => {
       <Slider ref={setSliderRefState} {...sliderSettings}>
         <SliderItem>
           <MainHeadingContainer>
-            <MainHeading>{`Hi, i'm Corentin,`}</MainHeading>
-            <MainHeading>{`Fullstack web developer`}</MainHeading>
+            <MainHeading>
+              <span>{`Hi, i'm Corentin,`}</span>
+            </MainHeading>
+            <MainHeading>
+              <span>{`Fullstack`}</span>
+            </MainHeading>
+            <MainHeading>
+              <span>{`web developer`}</span>
+            </MainHeading>
           </MainHeadingContainer>
         </SliderItem>
 
