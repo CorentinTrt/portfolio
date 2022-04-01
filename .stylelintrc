@@ -1,8 +1,19 @@
 {
-  "processors": ["stylelint-processor-styled-components"],
+  "plugins": ["stylelint-scss"],
   "extends": [
     "stylelint-config-recommended",
-    "stylelint-config-styled-components",
     "stylelint-config-property-sort-order-smacss"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "scss/dollar-variable-pattern": "^foo",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "no-invalid-position-at-import-rule": null
+  },
+  "overrides": [
+    {
+      "files": ["**/*.scss"]
+    }
   ]
 }
