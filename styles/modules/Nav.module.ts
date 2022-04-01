@@ -21,7 +21,7 @@ export const Bars = styled.div.attrs(
 )`
   position: relative;
   z-index: 1000;
-  width: 40px;
+  width: 3rem;
   height: 2px;
   transition: background 0.25s ease;
   background: ${colors.$white};
