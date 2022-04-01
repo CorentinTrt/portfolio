@@ -1,0 +1,70 @@
+@import '../theme';
+@import '../animations';
+
+.heading-main {
+  display: block;
+  overflow: hidden;
+  height: 25%;
+  margin: auto;
+  color: $white;
+  font-family: 'Montserrat', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 30px;
+  line-height: 120px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 1440px) {
+    font-size: 4rem;
+  }
+
+  &:nth-child(2) span {
+    animation-delay: 500ms;
+  }
+  &:nth-child(3) span {
+    animation-delay: 1000ms;
+  }
+
+  > span {
+    display: block;
+    @include animation('fade-in-heading 2.5s ease forwards');
+    transform: translateY(100%);
+  }
+}
+
+// const fadeIn = keyframes`
+//   0% {
+//     transform: translateY(100%);
+//   }
+//   100% {
+//     transform: translateY(0%);
+//   }
+// `;
+
+// > span {
+//     display: block;
+//     animation: ${fadeIn} 0.7s;
+//   }
+
+.heading-sub {
+  margin-bottom: 2rem;
+  color: $white;
+  font-family: 'Montserrat', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2rem;
+  line-height: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+  @media (min-width: 1440px) {
+    font-size: 5rem;
+  }
+}

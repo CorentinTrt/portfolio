@@ -1,0 +1,23 @@
+@import './_theme';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $black;
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.slick-vertical,
+.slick-slide {
+  border: none !important;
+}

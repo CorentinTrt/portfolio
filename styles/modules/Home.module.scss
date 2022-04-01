@@ -1,0 +1,65 @@
+@import '../theme';
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.container-main-heading {
+  width: 100vw;
+  padding: 30vh 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.right {
+  width: 50vw;
+  height: 100vh;
+  padding: 15vh 7vw;
+  background: $white;
+
+  &-text {
+    margin-bottom: 2rem;
+    color: $black;
+    font-family: 'Montserrat', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
+
+    &:nth-child(2) {
+      margin-bottom: 6rem;
+    }
+  }
+  &-link {
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+    color: $black;
+    font-family: 'Noto Sans', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
+    text-decoration: none;
+
+    &:hover {
+      color: $blackLight;
+    }
+  }
+}
+
+.tool-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
