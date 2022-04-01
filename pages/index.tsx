@@ -63,10 +63,14 @@ const Home: NextPage = () => {
       </div>
 
       <div className={nav_styles['container-scroll-indicator']}>
+        <ScrollIndicator
+          isOnWhite={currentSliderState >= 1}
+          isFocused={currentSliderState === 0}
+        />
         {sliderContent.map((e, i) => (
           <ScrollIndicator
             isOnWhite={currentSliderState >= 1}
-            isFocused={currentSliderState === i}
+            isFocused={currentSliderState === i + 1}
             key={`scroll-indicator-${i}`}
           />
         ))}
