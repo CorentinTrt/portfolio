@@ -16,6 +16,7 @@ import {
   NavContainer,
   NavContent,
   NavMenu,
+  ScrollIndicator,
 } from '../styles/modules/Nav.module';
 
 const Home: NextPage = () => {
@@ -59,6 +60,16 @@ const Home: NextPage = () => {
         }}
       >
         <Bars isOnWhite={currentSliderState >= 1} isOpen={isMenuOpenState} />
+      </div>
+
+      <div className={nav_styles['container-scroll-indicator']}>
+        {sliderContent.map((e, i) => (
+          <ScrollIndicator
+            isOnWhite={currentSliderState >= 1}
+            isFocused={currentSliderState === i}
+            key={`scroll-indicator-${i}`}
+          />
+        ))}
       </div>
 
       <NavContainer isOpen={isMenuOpenState}>
