@@ -139,3 +139,25 @@ export const NavMenu = styled.div.attrs((props: { isOpen: Boolean }) => props)`
         cubic-bezier(0.3, 0, 0.3, 1) forwards;
     `}
 `;
+
+export const ScrollIndicator = styled.div.attrs(
+  (props: { isFocused: Boolean; isOnWhite: Boolean }) => props
+)`
+  width: 1.5rem;
+  height: 2px;
+  margin: 0 0 1rem auto;
+  transition: all 500ms ease;
+  background-color: ${colors.$white};
+
+  ${props =>
+    props.isFocused &&
+    css`
+      width: 3rem;
+    `}
+
+  ${props =>
+    props.isOnWhite &&
+    css`
+      background-color: ${colors.$black};
+    `}
+`;
