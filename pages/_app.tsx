@@ -9,11 +9,27 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{`Corentin's portfolio`}</title>
         <meta name="description" content="This is a preview of my work" />
+
+        <meta itemProp="name" content="Corentin's portfolio" />
+        <meta itemProp="description" content="This is a preview of my work" />
+        <meta itemProp="image" content="" />
+
+        <meta property="og:url" content="https://corentintruffaut.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Corentin's portfolio" />
         <meta
-          name="keywords"
-          content="js, javascript, react, react.js, native, vue, vue.js, node, node.js, corentin, truffaut, portfolio, developer, web, montreal, paris"
+          property="og:description"
+          content="This is a preview of my work"
         />
-        <meta name="author" content="Corentin Truffaut" />
+        <meta property="og:image" content="" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Corentin's portfolio" />
+        <meta
+          name="twitter:description"
+          content="This is a preview of my work"
+        />
+        <meta name="twitter:image" content="" />
       </Head>
       <Component {...pageProps} />
     </>
