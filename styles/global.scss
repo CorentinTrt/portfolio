@@ -19,3 +19,15 @@ p {
 .slick-slide {
   border: none !important;
 }
+
+a {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+  color: V.$c-white;
+  text-decoration: none;
+
+  &:hover {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.7;
+  }
+}

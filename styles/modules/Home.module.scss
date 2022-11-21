@@ -28,7 +28,7 @@
   &-text {
     margin-bottom: 2rem;
     color: V.$c-black;
-    font-family: Montserrat, serif;
+    font-family: montserrat, serif;
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 0.1rem;
@@ -43,7 +43,7 @@
     margin-bottom: 2rem;
     transition: color 0.3s ease;
     color: V.$c-black;
-    font-family: "Noto Sans", serif;
+    font-family: 'noto sans', serif;
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
@@ -51,7 +51,7 @@
     text-decoration: none;
 
     &:hover {
-      color: V.$c-blackLight;
+      color: V.$c-black-light;
     }
   }
 }
