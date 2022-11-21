@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 
 import type { NextPage } from 'next';
-import Nav, { NavInterface } from '../utils/nav.utils';
-import navItems from '../data/navItems';
-import sliderContent from '../data/sliderContent';
+import Nav, { NavInterface } from '../../utils/nav.utils';
+import navItems from '../../data/navItems';
+import sliderContent from '../../data/sliderContent';
 
-import home_styles from '../styles/modules/Home.module.scss';
-import slider_styles from '../styles/modules/Slider.module.scss';
-import text_styles from '../styles/modules/Text.module.scss';
-import nav_styles from '../styles/modules/Nav.module.scss';
+import home_styles from '../../styles/modules/Home.module.scss';
+import slider_styles from '../../styles/modules/Slider.module.scss';
+import text_styles from '../../styles/modules/Text.module.scss';
+import nav_styles from '../../styles/modules/Nav.module.scss';
+
+import Catch from '../components/1_sections/catch/Catch';
 
 import {
   Bars,
@@ -17,7 +19,7 @@ import {
   NavContent,
   NavMenu,
   ScrollIndicator,
-} from '../styles/modules/Nav.module';
+} from '../../styles/modules/Nav.module';
 
 const Home: NextPage = () => {
   const [isMenuOpenState, setIsMenuOpenState] = useState(false);
@@ -115,19 +117,7 @@ const Home: NextPage = () => {
 
       {/* @ts-ignore */}
       <Slider ref={setSliderRefState} {...sliderSettings}>
-        <div className={slider_styles['slider-item']}>
-          <div className={home_styles['container-main-heading']}>
-            <h1 className={text_styles['heading-main']}>
-              <span>{`Hi, i'm Corentin,`}</span>
-            </h1>
-            <h1 className={text_styles['heading-main']}>
-              <span>{`Fullstack`}</span>
-            </h1>
-            <h1 className={text_styles['heading-main']}>
-              <span>{`web developer`}</span>
-            </h1>
-          </div>
-        </div>
+        <Catch />
 
         {sliderContent.map((e, i) => (
           <div className={slider_styles['slider-item']} key={`${e.title}_${i}`}>
