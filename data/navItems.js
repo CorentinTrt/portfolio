@@ -61,7 +61,24 @@ const navItems = [
     label: 'Contact',
   },
   {
-    wysiwig: <p>Coming :)</p>,
+    wysiwig: (
+      <>
+        <a
+          href="https://github.com/CorentinTrt/dotfiles"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p style={{ marginBottom: '2rem' }}>- my dotfiles</p>
+        </a>
+        <a
+          href="https://lunar-care-8a1.notion.site/Wiki-dev-98db8f3a52da469db05cb1ffa5cdf407"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p>- my wiki dev</p>
+        </a>
+      </>
+    ),
     label: 'Ressources',
   },
 ];
