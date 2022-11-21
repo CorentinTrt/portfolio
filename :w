@@ -15,9 +15,10 @@
 			"@sections/*": ["/src/components/1_sections/*"],
 			"@blocs/*": ["src/components/2_blocs/*"],
 			"@shared/*": ["src/components/3_shared/*"],
-      "@styles/*": ["styles/*"],
+			"@ctypes/*": ["src/types/*"],
+      "@constants/*": ["src/constants/*"],
 			"@utils/*": ["src/utils/*"],
-      "@data/*": ["src/data/*"],
+			"@svgs/*": ["public/svgs/*"]
 		},
     "resolveJsonModule": true,
     "isolatedModules": true,
