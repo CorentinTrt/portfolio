@@ -16,65 +16,6 @@ const colors = {
   $grey: '#999999',
 };
 
-export const Bars = styled.div.attrs(
-  (props: { isOpen: Boolean; isOnWhite: Boolean }) => props
-)`
-  position: relative;
-  z-index: 1000;
-  width: 3rem;
-  height: 2px;
-  transition: background 0.25s ease;
-  background: ${colors.$white};
-
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-origin: center center;
-    transition: transform 0.25s ease, top 0.25s ease, bottom 0.25s ease,
-      background 0.5s ease;
-    background: inherit;
-  }
-  &:before {
-    top: -15px;
-  }
-  &:after {
-    bottom: -15px;
-  }
-
-  ${props =>
-    props.isOnWhite &&
-    css`
-      background: ${colors.$black};
-      &:after {
-        background-color: ${colors.$black};
-      }
-    `}
-
-  ${props =>
-    props.isOpen &&
-    css`
-      background: transparent;
-
-      &:before,
-      &:after {
-        background-color: ${colors.$black};
-      }
-
-      &:before {
-        transform: rotate(45deg);
-        top: 0;
-      }
-      &:after {
-        transform: rotate(-45deg);
-        bottom: 0;
-      }
-    `}
-`;
-
 export const NavContainer = styled.nav.attrs(
   (props: { isOpen: Boolean }) => props
 )`

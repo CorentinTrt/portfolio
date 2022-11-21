@@ -1,21 +1,20 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import Slider from 'react-slick';
 
 import type { NextPage } from 'next';
-import Nav, { NavInterface } from '../../utils/nav.utils';
+import Nav, { NavInterface } from '../utils/nav.utils';
 import navItems from '../../data/navItems';
 import sliderContent from '../../data/sliderContent';
 
 import home_styles from '../../styles/modules/Home.module.scss';
-import slider_styles from '../../styles/modules/Slider.module.scss';
-import text_styles from '../../styles/modules/Text.module.scss';
 import nav_styles from '../../styles/modules/Nav.module.scss';
 
 import Catch from '../components/1_sections/catch/Catch';
 import SliderItem from '../components/1_sections/slider-item/SliderItem';
+import Bars from '../components/3_shared/bars/Bars';
 
 import {
-  Bars,
   NavContainer,
   NavContent,
   NavMenu,
@@ -47,7 +46,7 @@ const Home: NextPage = () => {
     slidesToScroll: 1,
     vertical: true,
     // verticalSwiping: true,
-    // swipeToSlide: true,
+    swipeToSlide: true,
     arrows: false,
     beforeChange: (prevIndex: Number, currentIndex: Number) => {
       setCurrentSliderState(currentIndex);
