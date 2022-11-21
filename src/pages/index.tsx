@@ -12,6 +12,7 @@ import text_styles from '../../styles/modules/Text.module.scss';
 import nav_styles from '../../styles/modules/Nav.module.scss';
 
 import Catch from '../components/1_sections/catch/Catch';
+import SliderItem from '../components/1_sections/slider-item/SliderItem';
 
 import {
   Bars,
@@ -120,30 +121,15 @@ const Home: NextPage = () => {
         <Catch />
 
         {sliderContent.map((e, i) => (
-          <div className={slider_styles['slider-item']} key={`${e.title}_${i}`}>
-            <div
-              className={home_styles['left']}
-              style={{ background: `url("./images/${e.backgroundSrc}")` }}
-            >
-              <h2 className={text_styles['heading-sub']}>{e.title}</h2>
-            </div>
-            <div className={home_styles['right']}>
-              <p className={home_styles['right-text']}>{e.intro}</p>
-              <p className={home_styles['right-text']}>{e.job}</p>
-              <div className={home_styles['tool-container']}>
-                {e.tools.map((t, i) => {
-                  const Logo = t.logo;
-                  return <Logo key={`${t.label}_${i}`} />;
-                })}
-              </div>
-              <a
-                className={home_styles['right-link']}
-                href={e.link}
-                target="_blank"
-                rel="noreferrer"
-              >{`Let's check the project !`}</a>
-            </div>
-          </div>
+          <SliderItem
+            key={`item_${i}`}
+            backgroundSrc={e.backgroundSrc}
+            title={e.title}
+            intro={e.intro}
+            job={e.job}
+            tools={e.tools}
+            link={e.link}
+          />
         ))}
       </Slider>
     </div>
