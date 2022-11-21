@@ -1,11 +1,9 @@
-@import './_theme';
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: $black;
+  background-color: V.$c-black;
 }
 
 body,
