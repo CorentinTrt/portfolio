@@ -1,0 +1,50 @@
+.catch {
+  display: flex !important;
+  min-width: 100vw;
+  min-height: 100vh;
+  border: none !important;
+  background: V.$c-black;
+
+  .container {
+    width: 100vw;
+    padding: 30vh 0;
+
+    .heading {
+      display: block;
+      height: 25%;
+      margin: auto;
+      overflow: hidden;
+      color: V.$c-white;
+      font-family: Montserrat, sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 30px;
+      line-height: 120px;
+      text-align: center;
+      text-transform: uppercase;
+
+      @media (min-width: 1024px) {
+        font-size: 3rem;
+      }
+
+      @media (min-width: 1440px) {
+        font-size: 4rem;
+      }
+
+      span {
+        @include A.animation("fade-in-heading 2.5s ease forwards");
+
+        display: block;
+        transform: translateY(100%);
+      }
+
+      &:nth-child(2) span {
+        animation-delay: 500ms;
+      }
+
+      &:nth-child(3) span {
+        animation-delay: 1000ms;
+      }
+    }
+  }
+}
