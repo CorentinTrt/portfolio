@@ -1,0 +1,15 @@
+.scroll-indicator {
+  width: 1.5rem;
+  height: 2px;
+  margin: 0 0 1rem auto;
+  transition: all 500ms ease;
+  background-color: V.$c-white;
+
+  &.on-white {
+    background-color: V.$c-black;
+  }
+
+  &.focused {
+    width: 3rem;
+  }
+}
