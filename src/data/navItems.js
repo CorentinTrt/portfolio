@@ -21,7 +21,7 @@ const navItems = [
         </p>
         <p
           style={{ marginBottom: '2rem', letterSpacing: '0.3rem' }}
-        >{`corentintruffaut@gmail.com`}</p>
+        >{`corentintruffaut @gmail.com`}</p>
         <div style={{ display: 'flex', gap: '2rem' }}>
           <a href="https://github.com/CorTrt" target="_blank" rel="noreferrer">
             <svg
