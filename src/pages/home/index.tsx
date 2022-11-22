@@ -11,6 +11,7 @@ import sliderContent from '@data/sliderContent';
 
 import Catch from '@sections/catch/Catch';
 import Menu from '@sections/menu/Menu';
+import MobileDisclaimer from '@sections/mobile-disclaimer/MobileDisclaimer';
 import SliderItem from '@sections/slider-item/SliderItem';
 import Bars from '@shared/bars/Bars';
 import ScrollIndicator from '@shared/scroll-indicator/ScrollIndicator';
@@ -20,17 +21,32 @@ const Home = () => {
   const [navigationState, setNavigationState] = useState<NavInterface>();
   const [sliderRefState, setSliderRefState] = useState<Slider>();
   const [currentSliderState, setCurrentSliderState] = useState<Number>(0);
+  const [state_isOnMobile, setState_isOnMobile] = useState<Boolean>(false);
 
   useEffect(() => {
+    if (!window) return;
+
     setNavigationState(new Nav(document));
+
+    window.innerWidth < 1000
+      ? setState_isOnMobile(true)
+      : setState_isOnMobile(false);
   }, []);
 
   useEffect(() => {
     if (!navigationState) return;
+    if (!window) return;
+
     navigationState.setAttributes();
 
     window.addEventListener('wheel', (e: WheelEvent) => {
       e.deltaY > 0 ? sliderRefState?.slickNext() : sliderRefState?.slickPrev();
+    });
+
+    window.addEventListener('resize', () => {
+      window.innerWidth < 1000
+        ? setState_isOnMobile(true)
+        : setState_isOnMobile(false);
     });
   }, [navigationState, sliderRefState]);
 
@@ -53,6 +69,8 @@ const Home = () => {
 
   return (
     <div className={s['home']}>
+      {state_isOnMobile && <MobileDisclaimer />}
+
       <div
         className={s['menu-toggle']}
         onClick={() => {
