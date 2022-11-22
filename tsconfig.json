@@ -10,19 +10,20 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-		"baseUrl": ".",
-		"paths": {
-			"@sections/*": ["/src/components/1_sections/*"],
-			"@blocs/*": ["src/components/2_blocs/*"],
-			"@shared/*": ["src/components/3_shared/*"],
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@sections/*": ["src/components/1_sections/*"],
+      "@blocs/*": ["src/components/2_blocs/*"],
+      "@shared/*": ["src/components/3_shared/*"],
       "@styles/*": ["styles/*"],
-			"@utils/*": ["src/utils/*"],
-      "@data/*": ["src/data/*"],
-		},
+      "@utils/*": ["src/utils/*"],
+      "@data/*": ["src/data/*"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
