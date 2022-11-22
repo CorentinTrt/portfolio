@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.2s ease;
+  opacity: 0;
+
+  &.opened {
+    visibility: visible;
+    z-index: 900;
+    opacity: 1;
+  }
+}
