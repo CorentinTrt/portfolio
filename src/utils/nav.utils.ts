@@ -12,33 +12,33 @@ export default class Nav {
   setAttributes() {
     const { document } = this;
 
-    const _navContent = document.querySelectorAll('.nav-content');
-    const _navMenu = document.querySelectorAll('.nav-menu');
+    const navContent = document.querySelector('#menu-content')?.children;
+    if (!navContent) return;
+    const navMenu = document.querySelector('#menu-item')?.children;
+    if (!navMenu) return;
+
     let i = 0;
-    let x = 0;
 
-    //   @ts-ignore
-    for (let e of _navContent) {
-      e.setAttribute('data-target', i);
+    // for (let e of Array.from(navContent)) {
+    //   e.setAttribute('data-target', i);
+    //   i++;
+    // }
+
+    for (let e of Array.from(navMenu)) {
+      e.setAttribute('data-target', i.toString());
       i++;
-    }
-
-    //   @ts-ignore
-    for (let e of _navMenu) {
-      e.setAttribute('data-target', x);
-      x++;
     }
   }
 
   showTarget(target: number) {
     const { document } = this;
 
-    // @ts-ignore
-    const _contentHeight = document.querySelector('.content').offsetHeight;
+    const content = document.querySelector('#menu-content') as HTMLElement;
+    const contentHeight = content?.offsetHeight;
 
-    const topSpace = _contentHeight * target * -1;
+    const topSpace = contentHeight * target * -1;
 
-    // @ts-ignore
-    document.querySelector('.content').style.top = `${topSpace}px`;
+    const menuContentGroup = document.querySelector('#menu-content-group') as HTMLElement;
+    menuContentGroup.style.top = `${topSpace}px`;
   }
 }
