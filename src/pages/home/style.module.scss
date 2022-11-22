@@ -1,0 +1,24 @@
+.home {
+  margin: 0;
+  padding: 0;
+
+  .container-scroll-indicator {
+    position: absolute;
+    z-index: 150;
+    top: 50%;
+    right: 3rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 3rem;
+    right: 3rem;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+  }
+}

@@ -4,21 +4,16 @@ import s from './style.module.scss';
 import Slider from 'react-slick';
 
 import Nav, { NavInterface } from '@utils/nav.utils';
+import emitter from '@src/emitter.js';
+
 import navItems from '@data/navItems';
 import sliderContent from '@data/sliderContent';
 
-import nav_styles from '@styles/modules/Nav.module.scss';
-
 import Catch from '@sections/catch/Catch';
+import Menu from '@sections/menu/Menu';
 import SliderItem from '@sections/slider-item/SliderItem';
 import Bars from '@shared/bars/Bars';
-
-import {
-  NavContainer,
-  NavContent,
-  NavMenu,
-  ScrollIndicator,
-} from '@styles/modules/Nav.module';
+import ScrollIndicator from '@shared/scroll-indicator/ScrollIndicator';
 
 const Home = () => {
   const [isMenuOpenState, setIsMenuOpenState] = useState(false);
@@ -39,6 +34,10 @@ const Home = () => {
     });
   }, [navigationState, sliderRefState]);
 
+  emitter.on('menu-item::hover', (i: Number) => {
+    navigationState?.showTarget(i);
+  });
+
   const sliderSettings = {
     infinite: false,
     slidesToShow: 1,
@@ -47,7 +46,7 @@ const Home = () => {
     // verticalSwiping: true,
     swipeToSlide: true,
     arrows: false,
-    beforeChange: (prevIndex: Number, currentIndex: Number) => {
+    beforeChange: (_: Number, currentIndex: Number) => {
       setCurrentSliderState(currentIndex);
     },
   };
@@ -55,7 +54,7 @@ const Home = () => {
   return (
     <div className={s['home']}>
       <div
-        className={nav_styles['menu-toggle']}
+        className={s['menu-toggle']}
         onClick={() => {
           setIsMenuOpenState(!isMenuOpenState);
         }}
@@ -63,12 +62,12 @@ const Home = () => {
         <Bars isOnWhite={currentSliderState >= 1} isOpen={isMenuOpenState} />
       </div>
 
-      <div className={nav_styles['container-scroll-indicator']}>
+      <div className={s['container-scroll-indicator']}>
         <ScrollIndicator
           isOnWhite={currentSliderState >= 1}
           isFocused={currentSliderState === 0}
         />
-        {sliderContent.map((e, i) => (
+        {sliderContent.map((_, i) => (
           <ScrollIndicator
             isOnWhite={currentSliderState >= 1}
             isFocused={currentSliderState === i + 1}
@@ -77,42 +76,7 @@ const Home = () => {
         ))}
       </div>
 
-      <NavContainer isOpen={isMenuOpenState}>
-        <NavContent isOpen={isMenuOpenState}>
-          <div className={`${nav_styles['nav-content-group']} content`}>
-            {navItems.map((e, i) => (
-              <div
-                className={`${nav_styles['nav-content-item']} nav-content`}
-                key={`${e.wysiwig}_${i}`}
-              >
-                {e.wysiwig}
-              </div>
-            ))}
-          </div>
-        </NavContent>
-
-        <NavMenu isOpen={isMenuOpenState}>
-          <div className={nav_styles['nav-menu-group']}>
-            {navItems.map((e, i) => (
-              <div
-                className={`${nav_styles['nav-menu-item']} nav-menu`}
-                key={`${e.label}_${i}`}
-              >
-                <div className="number">
-                  <span>{`0${i}`}</span>
-                </div>
-                <a
-                  className="nav-menu-label"
-                  onMouseEnter={() => navigationState?.showTarget(i)}
-                  href="#"
-                >
-                  {e.label}
-                </a>
-              </div>
-            ))}
-          </div>
-        </NavMenu>
-      </NavContainer>
+      <Menu isOpen={isMenuOpenState} items={navItems} />
 
       {/* @ts-ignore */}
       <Slider ref={setSliderRefState} {...sliderSettings}>
