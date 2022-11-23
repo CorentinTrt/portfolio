@@ -18,7 +18,7 @@
       "@shared/*": ["src/components/3_shared/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["src/utils/*"],
-      "@data/*": ["src/data/*"]
+      "@constants/*": ["src/constants/*"]
     },
     "resolveJsonModule": true,
     "isolatedModules": true,
