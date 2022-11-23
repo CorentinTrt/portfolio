@@ -1,9 +1,15 @@
+import React from 'react';
+
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import '../../styles/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // NOT RECOMMANDED
+  // Fix an issue with types compatibilites between React & Next.Js
+  const Children = Component as any;
+
   return (
     <>
       <Head>
@@ -31,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="twitter:image" content="" />
       </Head>
-      <Component {...pageProps} />
+      <Children {...pageProps} />
     </>
   );
 }
