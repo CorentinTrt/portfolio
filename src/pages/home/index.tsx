@@ -6,8 +6,8 @@ import Slider from 'react-slick';
 import Nav, { NavInterface } from '@utils/nav.utils';
 import emitter from '@src/emitter.js';
 
-import navItems from '@data/navItems';
-import sliderContent from '@data/sliderContent';
+import navItems from '@constants/navItems';
+import sliderContent from '@constants/sliderContent';
 
 import Catch from '@sections/catch/Catch';
 import Menu from '@sections/menu/Menu';
