@@ -1,9 +1,11 @@
 import React from 'react';
 import s from './style.module.scss';
 
+import type { NavItem } from '@constants/navItems';
+
 type Props = {
   isOpen: Boolean;
-  items: [];
+  items: NavItem[];
 };
 
 const MenuContent = (props: Props) => {
@@ -14,11 +16,15 @@ const MenuContent = (props: Props) => {
   return (
     <div id="menu-content" className={classes}>
       <div id="menu-content-group" className={s['menu-content--group']}>
-        {items.map((e, i) => (
-          <div className={s['item']} key={`${e.label}_${i}`}>
-            {e.wysiwig}
-          </div>
-        ))}
+        {items.map((e, i) => {
+          const Wysiwyg = () => e.wysiwyg;
+
+          return (
+            <div className={s['item']} key={`${e.label}_${i}`}>
+              <Wysiwyg />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

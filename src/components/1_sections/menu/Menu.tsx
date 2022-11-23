@@ -1,12 +1,14 @@
 import React from 'react';
 import s from './style.module.scss';
 
+import type { NavItem } from '@constants/navItems';
+
 import MenuContent from '@blocs/menu-content/MenuContent';
 import MenuItems from '@blocs/menu-items/MenuItems';
 
 type Props = {
   isOpen: Boolean;
-  items: [];
+  items: NavItem[];
 };
 
 const Menu = (props: Props) => {

@@ -1,11 +1,13 @@
 import React from 'react';
 import s from './style.module.scss';
 
+import type { NavItem } from '@constants/navItems';
+
 import emitter from '@src/emitter';
 
 type Props = {
   isOpen: Boolean;
-  items: [];
+  items: NavItem[];
 };
 
 const MenuItems = (props: Props) => {
