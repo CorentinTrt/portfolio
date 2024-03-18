@@ -1,5 +1,7 @@
 FROM node:16-alpine AS deps
 
+RUN echo '|----- NEXT APP -----|'
+
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json yarn.lock ./
@@ -33,3 +35,5 @@ EXPOSE 443
 ENV PORT 443
 
 CMD ["node", "server.js"]
+
+RUN echo '|----- NEXT APP END -----|'
