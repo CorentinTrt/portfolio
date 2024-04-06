@@ -11,8 +11,6 @@ services:
     build:
       context: ../
       dockerfile: docker/nextjs/prod.Dockerfile
-    ports:
-      - '3000:3000'
     networks:
       portfolio_net:
         aliases:
