@@ -3,13 +3,39 @@ version: '3.9'
 name: prod_portfolio_frontend
 
 services:
-  frontend-standalone:
+  portfolio_nextjs:
     platform: linux/x86_64
-    container_name: prod.nextjs.portfolio
-    image: prod.nextjs.portfolio
+    container_name: portfolio_nextjs
+    image: portfolio_nextjs
     restart: unless-stopped
-    ports:
-      - '443:443'
     build:
       context: ../
-      dockerfile: docker/prod.Dockerfile
+      dockerfile: docker/nextjs/prod.Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      portfolio_net:
+        aliases:
+          - portfolio_nextjs
+  portfolio_nginx:
+    platform: linux/x86_64
+    container_name: portfolio_nginx
+    image: portfolio_nginx
+    restart: unless-stopped
+    build:
+      context: ../
+      dockerfile: docker/nginx/prod.Dockerfile
+    ports:
+      - '80:80'
+      - '443:443'
+    extra_hosts:
+      - 'corentintruffaut.net:127.0.0.1'
+      - 'www.corentintruffaut.net:127.0.0.1'
+    networks:
+      portfolio_net:
+        aliases:
+          - portfolio_nginx
+networks:
+  portfolio_net:
+    name: portfolio_net
+
